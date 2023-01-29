@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardd</title>
+    <link rel="stylesheet" href="stylethat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="content">
+            <div class="imgbx">
+                <img src="" alt="" srcset="">
+            </div>
+            <div class="textContent">
+                <h3>Anagha Chauhan</h3>
+                <p>Developer</p>
+            </div>
+            <div class="icons">
+                <ul>
+                    <li><i class="fa-brands fa-facebook"></i></li>
+                    <li><i class="fa-brands fa-facebook-messenger"></i></li>
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                    <li><i class="fa-brands fa-linkedin"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="content">
+            <div class="imgbx">
+                <img src="" alt="" srcset="">
+            </div>
+            <div class="textContent">
+                <h3>Rushikesh Jewalikar</h3>
+                <p>Developer</p>
+            </div>
+            <div class="icons">
+                <ul>
+                    <li><i class="fa-brands fa-facebook"></i></li>
+                    <li><i class="fa-brands fa-facebook-messenger"></i></li>
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                    <li><i class="fa-brands fa-linkedin"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="content">
+            <div class="imgbx">
+                <img src="" alt="" srcset="">
+            </div>
+            <div class="textContent">
+                <h3>Rohit Patil</h3>
+                <p> Developer</p>
+            </div>
+            <div class="icons">
+                <ul>
+                    <li><i class="fa-brands fa-facebook"></i></li>
+                    <li><i class="fa-brands fa-facebook-messenger"></i></li>
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                    <li><i class="fa-brands fa-linkedin"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="content">
+            <div class="imgbx">
+                <img src="" alt="" srcset="">
+            </div>
+            <div class="textContent">
+                <h3>Sheshadri Saraf</h3>
+                <p> Developer</p>
+            </div>
+            <div class="icons">
+                <ul>
+                    <li><i class="fa-brands fa-facebook"></i></li>
+                    <li><i class="fa-brands fa-facebook-messenger"></i></li>
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                    <li><i class="fa-brands fa-linkedin"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+<script>
+    let Body = document.querySelector('body')
+    let card = document.getElementsByClassName('card')
+    card[0].addEventListener('click', () => {
+        console.log("hello World")
+        Body.style.background = '#fd2424'
+    })
+    card[1].addEventListener('click', () => {
+        Body.style.background = '#5496f3'
+    })
+    card[2].addEventListener('click', () => {
+        Body.style.background = '#ffcb63'
+    })  
+</script>
+
+</html>

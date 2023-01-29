@@ -1,0 +1,806 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+
+/* Code for ScrollBar */
+html::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 5px;
+
+}
+
+html::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.839);
+    border-radius: 5px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    transition: 2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    background: rgb(18, 252, 135);
+    background: var(--theme-color);
+}
+
+::selection {
+    background: var(--theme-color);
+    color: white;
+    cursor: pointer;
+}
+
+:root {
+    --theme-color: #00095E;
+    --txt-color: whitesmoke;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    width: 100%;
+    /* box-shadow: 1px 1px 10px rgba(14, 13, 13, 0.575); */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    position: absolute;
+    right: 3%;
+    top: 21px;
+}
+
+nav ul li a {
+    margin: 10px;
+    font-size: 22px;
+    color: var(--theme-color);
+    font-weight: 550;
+    cursor: pointer;
+    padding: 6px;
+    text-decoration: none;
+    align-self: center;
+    display: flex;
+}
+
+
+nav ul li a:hover,
+nav ul li a:active {
+    background-color: var(--theme-color);
+    color: var(--txt-color);
+    border-radius: 50px;
+    transform: translateY(-5%);
+    font-weight: 650;
+}
+
+#signUp {
+    position: relative;
+    margin: 0 10px;
+    font-size: 20px;
+    font-weight: 550;
+    padding: 8px;
+    text-decoration: none;
+    background-color: var(--theme-color);
+    color: var(--txt-color);
+    border-radius: 100vmax;
+    overflow: hidden;
+}
+
+#signUp:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 15px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.801);
+    transform: skewX(20deg) translateX(98px);
+    transition: 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    mix-blend-mode: luminosity;
+    visibility: hidden;
+}
+
+#signUp:hover::before {
+    visibility: visible;
+    transform: skewX(20deg) translateX(-17px)
+}
+
+nav #Logo_image img {
+    mix-blend-mode: difference;
+    position: relative;
+    height: 76px;
+    bottom: -8px;
+    left: 10px;
+
+}
+
+
+#svgCircle svg {
+    /* display: none; */
+    position: absolute;
+    top: 16px;
+    left: 30px;
+    animation: Roll 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+}
+
+@keyframes Roll {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+#svgCircle:before {
+    position: absolute;
+    content: '\f072';
+    top: 6px;
+    left: 40px;
+    font-family: 'FontAwesome';
+    font-size: 20px;
+    /* transform: rotate(30deg); */
+    /* background-image: url('flight.png'); */
+    mix-blend-mode: darken;
+}
+
+.blob:hover {
+    transform: translateY(-4.5%);
+}
+
+body .hero_text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    text-align: center;
+    font-size: 60px;
+    margin: auto;
+    position: relative;
+    top: 80px;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--theme-color);
+    /* z-index: 100; */
+    user-select: none;
+    transition: 0.5 cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+}
+
+body .hero_text p {
+    font-family: 'Roboto Mono', monospace;
+    /* white-space: nowrap; */
+
+}
+
+/* .hero_text span {
+    display: inline-block;
+    width: 150px;
+    position: relative;
+    word-wrap: normal;
+    white-space: nowrap;
+    border: 1px solid green;
+} */
+
+/* Not Usable */
+body #Hetext_bar {
+    opacity: 0.5;
+    text-align: center;
+    background: #ffb700;
+    height: 10px;
+    width: 60%;
+    margin: auto;
+    z-index: -60;
+    position: relative;
+    top: -20px;
+}
+
+#ImgCon {
+    position: relative;
+    z-index: -100;
+    pointer-events: none;
+}
+
+#Natureimage img {
+    position: relative;
+    top: 150px;
+    background-size: cover;
+    background-position: center center;
+}
+
+#Busimage2 {
+    position: absolute;
+    bottom: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    animation: Bus 4s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+    /* cubic-bezier(0.215, 0.610, 0.355, 1) */
+}
+
+/* Animation For car/Bus */
+@keyframes Bus {
+    0% {
+        transform: translate(-35%, 0%);
+    }
+
+    50% {
+        transform: translate(-70%, 0%);
+    }
+
+    100% {
+        transform: translate(-35%, 0%);
+    }
+}
+
+.buttonClass {
+    text-decoration: none;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 180%);
+    font-size: 20px;
+    width: 195px;
+    height: 61px;
+    color: var(--txt-color);
+    font-weight: bold;
+    border-radius: 42px;
+    background: black;
+    border: none;
+    text-align: center;
+    box-shadow: 1px 10px 25px rgba(0, 0, 0, 0.2);
+
+}
+
+.buttonClass::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 30px;
+    width: 117px;
+    height: 47px;
+    border-radius: 42px;
+    border: 1px solid black;
+    visibility: hidden;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.buttonClass:hover::before {
+    visibility: visible;
+    animation: scaleUp 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+}
+
+@keyframes scaleUp {
+    to {
+        transform: scale(2.5);
+        opacity: 0.01;
+    }
+}
+
+
+#svgContainer {
+    /* Blue blob */
+    position: absolute;
+    top: 5%;
+    left: 4%;
+    width: 30%;
+    transform: rotate(300deg);
+    z-index: -10;
+}
+
+#svgCont2 {
+    /* Red blob */
+    position: absolute;
+    right: -1px;
+}
+
+
+/* Section 2 */
+
+#secondPage {
+    margin-top: 10%;
+    position: relative;
+    height: 90%;
+    width: 100%;
+}
+
+#SpecsContainer {
+    margin: 8%;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#secondPage #features {
+    font-size: 24px;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--theme-color);
+    line-height: 90px;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    justify-content: start;
+    padding-left: 100px;
+
+}
+
+.enhancePlus {
+    /* Utility Class */
+    color: #4545ff;
+    color: #00095E;
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#secondPage hr {
+    width: 100%;
+    height: 1px;
+    color: black;
+    opacity: 0.4;
+    border-radius: 30%;
+}
+
+
+#svgDots {
+    position: absolute;
+    width: 100%;
+    z-index: -87;
+    opacity: 0.5;
+    transform: rotate(30deg) translate(-100px, 10px)
+}
+
+#Image {
+    position: relative;
+}
+
+#Image:before {
+    content: '';
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-65%, -59%);
+    z-index: -1;
+}
+
+
+/* Sign Up */
+
+/* #mainSign {
+    width: 100%;
+    height: 100vh;
+    background-color: #0000007d;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-content: center;
+    z-index: 1000000;
+    display: none;
+
+} */
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -220%);
+    width: 400px;
+    height: 450px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    transition: 1s linear;
+    z-index: 10;
+    display: none;
+
+
+}
+
+.content h1 {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    /* font-family: 'Roboto Mono', monospace; */
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 20px 0;
+    /*Normal: Top Right bottom Left */
+
+}
+
+.content form {
+    padding: 10px 40px;
+}
+
+.content .txtspace {
+    position: relative;
+    border-bottom: 1px solid black;
+    margin: 34px 0;
+}
+
+.content input {
+    width: 100%;
+    height: 40px;
+    padding: 0 5px;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 17px;
+}
+
+.content label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: black;
+    pointer-events: none;
+    transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.content span::before {
+    position: absolute;
+    content: '';
+    top: 40px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: #001780;
+    /* transform: scale(0); */
+    transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+}
+
+.txtspace input:focus~label,
+.txtspace input:valid~label {
+    transform: translateY(calc(-50% - 20px));
+    color: #001781;
+    font-size: calc(1rem - 3px);
+
+}
+
+.txtspace input:focus~span::before {
+    width: 100%;
+}
+
+.content form input[type="Submit"] {
+    position: relative;
+    left: calc(50% - 50px);
+    background: #1c2aa7;
+    color: white;
+    width: 100px;
+    border-radius: 20px;
+    transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1)
+}
+
+
+form p {
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 100px);
+}
+
+form p a {
+    color: #1540ff;
+}
+
+#circle {
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: #1c2aa7;
+    height: 494px;
+    width: 400px;
+    clip-path: circle(100% at 100% 100%);
+    transform: rotate(180deg);
+    transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#circle:hover {
+    background: #e32336;
+}
+
+/* Sign Up Ends Here */
+
+
+
+
+#DejaVu {
+    position: relative;
+    margin: 0 auto;
+    transform: translateY(-20%);
+    padding: 0;
+    width: 90%;
+    height: 20%;
+    /* display: grid;
+    place-content: center; */
+    border: 1px dotted rgba(0, 0, 0, 0.798);
+    /* border-top: 1px solid #000; */
+    border-radius: 1vmax;
+    /* box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1); */
+
+}
+
+
+#DejaVu p {
+    margin: 40px 26px;
+
+}
+
+#DejaVu #weHaveMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px;
+    /* border: 1px solid black; */
+}
+
+#DejaVu #weHaveMain .blocks {
+    position: relative;
+    display: block;
+    margin: 0px 10px;
+    /* border: 1px dotted black; */
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+}
+
+#DejaVu #weHaveMain .blocks h2 {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+#DejaVu #weHaveMain .blocks .material-symbols-outlined {
+    font-size: 25px;
+    transform: translateY(20%);
+    margin: 0.1rem;
+}
+
+#DejaVu #weHaveMain .blocks p {
+    color: rgba(0, 0, 0, 0.749);
+    margin: 2px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+#DejaVu #weHaveMain .blocks::before {
+    content: '';
+    position: absolute;
+    top: -14px;
+    left: 2px;
+    background-color: var(--theme-color);
+    width: 2.4rem;
+    height: 5px;
+    border-radius: 2px;
+    transition: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+#DejaVu #weHaveMain .blocks:hover:before {
+    width: 4.8rem;
+}
+
+/* LoaderScreen */
+.LoaderScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    transition: 0s;
+    z-index: 100;
+
+}
+
+.progress {
+    height: 5px;
+    width: 210px;
+    background: linear-gradient(#00095E 0 0),
+        linear-gradient(#00095E 0 0),
+        #dbdcef;
+    background-size: 60% 100%;
+    background-repeat: no-repeat;
+    animation: progressBar 1.5s infinite;
+}
+
+@keyframes progressBar {
+    0% {
+        background-position: -150% 0, -150% 0;
+    }
+
+    66% {
+        background-position: 250% 0, -150% 0;
+    }
+
+    100% {
+        background-position: 250% 0, 250% 0;
+    }
+}
+
+
+.LoaderScreen #loaderContainer {
+    width: auto;
+    height: 100px;
+    overflow: hidden;
+    display: grid;
+    place-content: center;
+
+}
+
+.LoaderScreen #spinnerText p {
+    position: relative;
+    top: 20px;
+    font-size: 25px;
+    font: 500;
+    font-family: 'roboto mono', monospace
+}
+
+
+
+
+/* Footer */
+
+#footer {
+    position: absolute;
+    bottom: -40vh;
+    width: 100%;
+    height: 38vh;
+    background-color: rgb(18 18 19 / 99%);
+    background-color: rgb(31 31 64 / 99%);
+}
+
+
+.logoo {
+    position: absolute;
+    top: 5%;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+
+.logoo svg circle {
+    stroke: white;
+}
+
+.logoo span {
+    color: white;
+    position: absolute;
+    left: 11px;
+    top: 13px;
+    font-size: 40px;
+
+}
+
+.logoo p {
+
+    position: relative;
+    color: white;
+    font-weight: 500;
+    font-size: 40px;
+    margin: 10px;
+
+}
+
+.logoo span:before {
+
+    font-family: 'FontAwesome';
+    position: absolute;
+    content: '\f072';
+    font-size: 20px;
+    top: -19px;
+    left: -2px;
+
+}
+
+
+
+#footer #footContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
+#footer #footContent ul {
+    transform: translateY(30%);
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+#footer #footContent ul li {
+    margin: 15px;
+    font-size: 25px;
+
+}
+
+#footer #footContent ul li a {
+    color: whitesmoke;
+}
+
+#footer #footContent ul li a:hover {
+    opacity: 0.8;
+    color: rgb(94, 94, 248);
+}
+
+#footer #footContent #footerText {
+    margin-top: 40px;
+    width: 40%;
+}
+
+#footer #footContent #footerText p {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+#footer #footContent #footerText p:nth-child(2) {
+    font-size: 14px;
+    margin-top: 20px;
+    letter-spacing: 0.4px;
+    color: rgb(255, 255, 255, 0.5);
+}
+
+#TextSpan {
+    position: relative;
+    padding-left: 4px;
+    width: 100px;
+    height: 100px;
+    z-index: -10;
+
+}
+
+#TextSpan:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    background-color: white;
+    border-left: 3px solid #4545ff;
+    animation: change 3s linear infinite;
+    visibility: var(--visible, visible);
+
+}
+
+@keyframes change {
+
+    40%,
+    60% {
+        left: calc(100% + 4px);
+    }
+
+    100% {
+        left: 0;
+    }
+}

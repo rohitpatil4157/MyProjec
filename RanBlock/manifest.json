@@ -1,0 +1,19 @@
+{
+    "name": "ADBlacker",
+    "description": "Enjoy adFree Life :)",
+    "version": "1.0",
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "icons": {
+        "16": "Rectangle 1.png"
+    },
+    "manifest_version": 2
+}
